@@ -1,0 +1,16 @@
+name: zeczec manual crawler
+
+on:
+  schedule:
+    # run at every hour at 10 mins
+    - cron:  '10 * * * *'
+jobs:
+  crawl:
+    runs-on: 'ubuntu-latest'
+    container:
+      image: plantpractice01/zec-plant:latest
+      credentials:
+        username: plantpractice01
+        password: ${{secrets.DOCKER_HUB_TOKEN}}
+    steps:
+      - uses: actions/checkout@v2
