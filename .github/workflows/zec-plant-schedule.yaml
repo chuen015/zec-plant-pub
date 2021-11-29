@@ -14,5 +14,5 @@ jobs:
         password: ${{secrets.DOCKER_HUB_TOKEN}}
     steps:
       - uses: actions/checkout@v2
-      - name: "Run"
-        run: "node /app/src/parse-zec.js"
+      #- name: "Run"
+      #  run: "node /app/src/parse-zec.js"
