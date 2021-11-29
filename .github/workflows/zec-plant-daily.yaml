@@ -1,0 +1,18 @@
+name: zeczec schedule daily sold
+
+on:
+  schedule:
+    # run at 16:30 UTC Time
+    - cron:  '30 16 * * *'
+jobs:
+  crawl:
+    runs-on: 'ubuntu-latest'
+    container:
+      image: plantpractice01/zec-plant:latest
+      credentials:
+        username: plantpractice01
+        password: ${{secrets.DOCKER_HUB_TOKEN}}
+    steps:
+      - uses: actions/checkout@v2
+      - name: "Run"
+        run: "node /app/src/notify_daily_sold.js"
