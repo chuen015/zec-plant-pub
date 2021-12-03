@@ -16,5 +16,5 @@ jobs:
       - uses: actions/checkout@v2
       - name: "Environment"
         run: "npm list"
-      //- name: "Run"
-        //run: "node /app/src/parse-zec.js"
+      - name: "Run"
+        run: "node /app/src/parse-zec.js"
